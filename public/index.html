@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>File Manager</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+  <h1 class="text-3xl font-bold text-center text-blue-600 mb-6">File Manager</h1>
+  <div class="max-w-4xl mx-auto space-y-6">
+
+    <section class="bg-white p-5 rounded-lg shadow-md">
+      <div id="readMessage" class="mt-4 text-sm text-red-600"></div>
+      <h2 class="text-xl font-semibold mb-2">Read File</h2>
+      <input type="text" id="readFileName" placeholder="Enter file name" class="border border-gray-300 p-2 w-full rounded-md">
+      <button onclick="readFile()" class="bg-blue-500 text-white px-4 py-2 mt-2 rounded-md hover:bg-blue-600">
+        Read File
+      </button>
+      <div class="mt-5 bg-gray-50 p-4 rounded-lg shadow-md border max-h-[400px] overflow-auto">
+        <pre id="readContent" class="text-base text-gray-800 leading-relaxed whitespace-pre-wrap"></pre>
+      </div>
+    </section>
+
+    <section class="bg-white p-5 rounded-lg shadow-md">
+      <div id="writeMessage" class="mt-4 text-sm text-red-600"></div>
+      <h2 class="text-xl font-semibold mb-2">Write File && Create File</h2>
+      <input type="text" id="writeFileName" placeholder="Enter file name" class="border border-gray-300 p-2 w-full rounded-md">
+      <textarea id="writeContent" placeholder="Enter content" class="border border-gray-300 p-2 w-full rounded-md mt-2"></textarea>
+      <button onclick="writeFile()" class="bg-green-500 text-white px-4 py-2 mt-2 rounded-md hover:bg-green-600">
+        Write File
+      </button>
+    </section>
+
+    <section class="bg-white p-5 rounded-lg shadow-md">
+      <div id="appendMessage" class="mt-4 text-sm text-red-600"></div>
+      <h2 class="text-xl font-semibold mb-2">Append to File</h2>
+      <input type="text" id="appendFileName" placeholder="Enter file name" class="border border-gray-300 p-2 w-full rounded-md">
+      <textarea id="appendContent" placeholder="Enter content" class="border border-gray-300 p-2 w-full rounded-md mt-2"></textarea>
+      <button onclick="appendFile()" class="bg-yellow-500 text-white px-4 py-2 mt-2 rounded-md hover:bg-yellow-600">
+        Append to File
+      </button>
+    </section>
+
+    <section class="bg-white p-5 rounded-lg shadow-md">
+      <div id="deleteMessage" class="mt-4 text-sm text-red-600"></div>
+      <h2 class="text-xl font-semibold mb-2">Delete File</h2>
+      <input type="text" id="deleteFileName" placeholder="Enter file name" class="border border-gray-300 p-2 w-full rounded-md">
+      <button onclick="deleteFile()" class="bg-red-500 text-white px-4 py-2 mt-2 rounded-md hover:bg-red-600">
+        Delete File
+      </button>
+    </section>
+
+    <section class="bg-white p-5 rounded-lg shadow-md">
+      <div id="renameMessage" class="mt-4 text-sm text-red-600"></div>
+      <h2 class="text-xl font-semibold mb-2">Rename File</h2>
+      <input type="text" id="oldFileName" placeholder="Enter current file name" class="border border-gray-300 p-2 w-full rounded-md">
+      <input type="text" id="newFileName" placeholder="Enter new file name"
+        class="border border-gray-300 p-2 w-full rounded-md mt-2">
+      <button onclick="renameFile()" class="bg-purple-500 text-white px-4 py-2 mt-2 rounded-md hover:bg-purple-600">
+        Rename File
+      </button>
+    </section>
+
+    <section class="bg-white p-5 rounded-lg shadow-md">
+      <h2 class="text-xl font-semibold mb-2">Create Directory</h2>
+      <input type="text" id="createDirName" placeholder="Enter directory name" class="border border-gray-300 p-2 w-full rounded-md">
+      <button onclick="createDirectory()" class="bg-teal-500 text-white px-4 py-2 mt-2 rounded-md hover:bg-teal-600">
+        Create Directory
+      </button>
+    </section>
+
+    <section class="bg-white p-5 rounded-lg shadow-md">
+      <h2 class="text-xl font-semibold mb-2">Delete Directory</h2>
+      <input type="text" id="deleteDirName" placeholder="Enter directory name" class="border border-gray-300 p-2 w-full rounded-md">
+      <button onclick="deleteDirectory()" class="bg-gray-500 text-white px-4 py-2 mt-2 rounded-md hover:bg-gray-600">
+        Delete Directory
+      </button>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
